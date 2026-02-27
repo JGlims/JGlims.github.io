@@ -372,10 +372,14 @@
             </div>
           </article>
 
+          <!-- ===== MINECRAFT PROJECT CARD (UPDATED) ===== -->
           <article class="project-card reveal" data-tilt>
             <div class="project-card__header">
               <svg class="project-card__folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
               <div class="project-card__links">
+                <a href="http://144.22.198.184" target="_blank" rel="noopener noreferrer" aria-label="Live Dashboard">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                </a>
                 <a href="https://github.com/JGlims" target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
                 </a>
@@ -383,13 +387,17 @@
             </div>
             <h3 class="project-card__title" data-i18n="proj4_title">Production Minecraft Bedrock Server on Oracle Cloud</h3>
             <p class="project-card__description" data-i18n="proj4_desc">
-              Deployed and configured a Minecraft Bedrock server running on an Oracle Cloud Infrastructure Always Free VM. Set up the full environment from scratch — VCN networking, security lists, firewall rules, startup automation, scheduled backups, and performance tuning. The server runs 24/7 and handles real player traffic reliably.
+              Deployed and configured a Minecraft Bedrock server on an Oracle Cloud Infrastructure Always Free ARM VM. Set up the full environment from scratch — VCN networking, security lists, iptables firewall rules, startup automation via systemd, scheduled backups, and performance tuning. Built a custom real-time monitoring dashboard: a Python service pings the server every 60 seconds via raw UDP, collects CPU, RAM, disk, and player metrics, and writes rolling JSON consumed by a vanilla JavaScript front end served through Nginx. The server and dashboard run 24/7 and handle real player traffic reliably. <a href="http://144.22.198.184" target="_blank" rel="noopener noreferrer">View Live Dashboard →</a>
             </p>
             <div class="project-card__tags">
+              <span class="tag tag--small">Python</span>
+              <span class="tag tag--small">Bash</span>
+              <span class="tag tag--small">Nginx</span>
+              <span class="tag tag--small">JavaScript</span>
               <span class="tag tag--small">Oracle Cloud</span>
               <span class="tag tag--small">Linux</span>
-              <span class="tag tag--small">Networking</span>
-              <span class="tag tag--small">DevOps</span>
+              <span class="tag tag--small">systemd</span>
+              <span class="tag tag--small">UDP Protocol</span>
             </div>
           </article>
 
