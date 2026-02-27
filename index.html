@@ -6,7 +6,6 @@
   <meta name="description" content="João Gabriel Melo de Lima — Computer Engineering student at UnB. Software engineer portfolio showcasing projects in Python, C++, TypeScript, and cloud infrastructure." />
   <meta name="author" content="João Gabriel Melo de Lima" />
 
-  <!-- Open Graph -->
   <meta property="og:title" content="João Gabriel — Software Engineer" />
   <meta property="og:description" content="Computer Engineering @ UnB · Python · C++ · TypeScript · Cloud" />
   <meta property="og:type" content="website" />
@@ -14,7 +13,6 @@
 
   <title>João Gabriel — Software Engineer</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -28,29 +26,41 @@
       <a href="#hero" class="nav__logo-link">&lt;JGlims /&gt;</a>
     </div>
     <ul class="nav__links">
-      <li><a href="#about" class="nav__link">About</a></li>
-      <li><a href="#skills" class="nav__link">Skills</a></li>
-      <li><a href="#experience" class="nav__link">Experience</a></li>
-      <li><a href="#projects" class="nav__link">Projects</a></li>
-      <li><a href="#education" class="nav__link">Education</a></li>
-      <li><a href="#contact" class="nav__link">Contact</a></li>
+      <li><a href="#about" class="nav__link" data-i18n="nav_about">About</a></li>
+      <li><a href="#skills" class="nav__link" data-i18n="nav_skills">Skills</a></li>
+      <li><a href="#experience" class="nav__link" data-i18n="nav_experience">Experience</a></li>
+      <li><a href="#projects" class="nav__link" data-i18n="nav_projects">Projects</a></li>
+      <li><a href="#education" class="nav__link" data-i18n="nav_education">Education</a></li>
+      <li><a href="#contact" class="nav__link" data-i18n="nav_contact">Contact</a></li>
+      <li>
+        <button class="lang-toggle" id="langToggle" aria-label="Toggle language">
+          <span class="lang-toggle__flag" id="langFlag">🇧🇷</span>
+          <span class="lang-toggle__label" id="langLabel">PT</span>
+        </button>
+      </li>
     </ul>
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
-      <span class="nav__toggle-bar"></span>
-    </button>
+    <div class="nav__right-mobile">
+      <button class="lang-toggle" id="langToggleMobile" aria-label="Toggle language">
+        <span class="lang-toggle__flag" id="langFlagMobile">🇧🇷</span>
+        <span class="lang-toggle__label" id="langLabelMobile">PT</span>
+      </button>
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+    </div>
   </nav>
 
   <!-- ========== MOBILE MENU ========== -->
   <div class="mobile-menu" id="mobileMenu">
     <ul class="mobile-menu__links">
-      <li><a href="#about" class="mobile-menu__link">About</a></li>
-      <li><a href="#skills" class="mobile-menu__link">Skills</a></li>
-      <li><a href="#experience" class="mobile-menu__link">Experience</a></li>
-      <li><a href="#projects" class="mobile-menu__link">Projects</a></li>
-      <li><a href="#education" class="mobile-menu__link">Education</a></li>
-      <li><a href="#contact" class="mobile-menu__link">Contact</a></li>
+      <li><a href="#about" class="mobile-menu__link" data-i18n="nav_about">About</a></li>
+      <li><a href="#skills" class="mobile-menu__link" data-i18n="nav_skills">Skills</a></li>
+      <li><a href="#experience" class="mobile-menu__link" data-i18n="nav_experience">Experience</a></li>
+      <li><a href="#projects" class="mobile-menu__link" data-i18n="nav_projects">Projects</a></li>
+      <li><a href="#education" class="mobile-menu__link" data-i18n="nav_education">Education</a></li>
+      <li><a href="#contact" class="mobile-menu__link" data-i18n="nav_contact">Contact</a></li>
     </ul>
   </div>
 
@@ -59,22 +69,22 @@
     <section class="hero" id="hero">
       <div class="hero__particles" aria-hidden="true"></div>
       <div class="hero__content">
-        <p class="hero__greeting reveal">Hi, I'm</p>
+        <p class="hero__greeting reveal" data-i18n="hero_greeting">Hi, I'm</p>
         <h1 class="hero__name reveal reveal--delay-1">João Gabriel<span class="hero__cursor">_</span></h1>
         <p class="hero__title reveal reveal--delay-2">
-          <span class="hero__title-static">Software Engineer</span>
+          <span class="hero__title-static" data-i18n="hero_role">Software Engineer</span>
           <span class="hero__title-dynamic" id="typedText"></span>
         </p>
-        <p class="hero__subtitle reveal reveal--delay-3">
+        <p class="hero__subtitle reveal reveal--delay-3" data-i18n="hero_subtitle">
           Computer Engineering @ UnB · Building reliable systems with Python, C++, and TypeScript
         </p>
         <div class="hero__cta reveal reveal--delay-4">
           <a href="#projects" class="btn btn--primary">
-            <span class="btn__text">View My Work</span>
+            <span class="btn__text" data-i18n="hero_cta_work">View My Work</span>
             <span class="btn__icon">→</span>
           </a>
           <a href="#contact" class="btn btn--outline">
-            <span class="btn__text">Get in Touch</span>
+            <span class="btn__text" data-i18n="hero_cta_contact">Get in Touch</span>
           </a>
         </div>
         <div class="hero__social reveal reveal--delay-4">
@@ -90,7 +100,7 @@
         </div>
       </div>
       <div class="hero__scroll-indicator reveal reveal--delay-4">
-        <span>Scroll</span>
+        <span data-i18n="hero_scroll">Scroll</span>
         <div class="hero__scroll-line"></div>
       </div>
     </section>
@@ -99,17 +109,17 @@
     <section class="section about" id="about">
       <div class="container">
         <h2 class="section__title reveal">
-          <span class="section__number">01.</span> About Me
+          <span class="section__number">01.</span> <span data-i18n="about_title">About Me</span>
         </h2>
         <div class="about__grid">
           <div class="about__text reveal">
-            <p>
+            <p data-i18n="about_p1">
               I'm João — a 4th-semester <strong>Computer Engineering</strong> student at UnB who genuinely gets excited about making things work. Not just "it compiles" work, but <strong>runs-in-production-at-3am-without-waking-anyone-up</strong> work. That's the standard I hold myself to.
             </p>
-            <p>
+            <p data-i18n="about_p2">
               My path into engineering started the way most do: breaking things and figuring out how to put them back together. These days I spend my time building <strong>real-time computer vision pipelines</strong>, writing automation bots that handle thousands of messages, and running game servers where actual players depend on my infrastructure decisions. I write mostly <strong>Python</strong>, <strong>C++</strong>, and <strong>TypeScript</strong>, but the language matters less to me than the architecture behind it.
             </p>
-            <p>
+            <p data-i18n="about_p3">
               What I'm chasing next: distributed systems, large-scale data pipelines, and anything that forces me to think about performance at a level most people skip. I'm the kind of person who reads Linux kernel docs for fun and thinks <code>htop</code> is a perfectly valid form of entertainment.
             </p>
           </div>
@@ -129,28 +139,28 @@
               <div class="about__detail-card">
                 <span class="about__detail-icon">📍</span>
                 <div>
-                  <span class="about__detail-label">Location</span>
+                  <span class="about__detail-label" data-i18n="detail_location">Location</span>
                   <span class="about__detail-value">Brasília, DF, Brazil</span>
                 </div>
               </div>
               <div class="about__detail-card">
                 <span class="about__detail-icon">🎓</span>
                 <div>
-                  <span class="about__detail-label">University</span>
-                  <span class="about__detail-value">UnB — Computer Engineering</span>
+                  <span class="about__detail-label" data-i18n="detail_university">University</span>
+                  <span class="about__detail-value" data-i18n="detail_university_val">UnB — Computer Engineering</span>
                 </div>
               </div>
               <div class="about__detail-card">
                 <span class="about__detail-icon">🗣️</span>
                 <div>
-                  <span class="about__detail-label">Languages</span>
-                  <span class="about__detail-value">Portuguese (native) · English (fluent)</span>
+                  <span class="about__detail-label" data-i18n="detail_languages">Languages</span>
+                  <span class="about__detail-value" data-i18n="detail_languages_val">Portuguese (native) · English (fluent)</span>
                 </div>
               </div>
               <div class="about__detail-card">
                 <span class="about__detail-icon">⚡</span>
                 <div>
-                  <span class="about__detail-label">Interests</span>
+                  <span class="about__detail-label" data-i18n="detail_interests">Interests</span>
                   <span class="about__detail-value">Big Data · Distributed Systems · Cloud</span>
                 </div>
               </div>
@@ -164,14 +174,14 @@
     <section class="section skills" id="skills">
       <div class="container">
         <h2 class="section__title reveal">
-          <span class="section__number">02.</span> Skills & Tools
+          <span class="section__number">02.</span> <span data-i18n="skills_title">Skills & Tools</span>
         </h2>
         <div class="skills__grid">
           <div class="skill-card reveal" data-tilt>
             <div class="skill-card__icon">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
             </div>
-            <h3 class="skill-card__title">Languages</h3>
+            <h3 class="skill-card__title" data-i18n="skill_languages">Languages</h3>
             <div class="skill-card__tags">
               <span class="tag">Python</span>
               <span class="tag">C++</span>
@@ -198,7 +208,7 @@
             <div class="skill-card__icon">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
             </div>
-            <h3 class="skill-card__title">Data & Backend</h3>
+            <h3 class="skill-card__title" data-i18n="skill_data">Data & Backend</h3>
             <div class="skill-card__tags">
               <span class="tag">SQL</span>
               <span class="tag">PostgreSQL</span>
@@ -210,7 +220,7 @@
             <div class="skill-card__icon">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
             </div>
-            <h3 class="skill-card__title">DevOps & Tools</h3>
+            <h3 class="skill-card__title" data-i18n="skill_devops">DevOps & Tools</h3>
             <div class="skill-card__tags">
               <span class="tag">Git/GitHub</span>
               <span class="tag">Linux</span>
@@ -223,12 +233,12 @@
             <div class="skill-card__icon">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <h3 class="skill-card__title">Practices</h3>
+            <h3 class="skill-card__title" data-i18n="skill_practices">Practices</h3>
             <div class="skill-card__tags">
               <span class="tag">Clean Code</span>
               <span class="tag">TDD</span>
               <span class="tag">ESLint</span>
-              <span class="tag">Modular Design</span>
+              <span class="tag" data-i18n="tag_modular">Modular Design</span>
               <span class="tag">CI/CD</span>
             </div>
           </div>
@@ -236,12 +246,12 @@
             <div class="skill-card__icon">
               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
             </div>
-            <h3 class="skill-card__title">Cloud & Infra</h3>
+            <h3 class="skill-card__title" data-i18n="skill_cloud">Cloud & Infra</h3>
             <div class="skill-card__tags">
               <span class="tag">Oracle Cloud</span>
               <span class="tag">VPS Deployment</span>
               <span class="tag">Nginx</span>
-              <span class="tag">Monitoring</span>
+              <span class="tag" data-i18n="tag_monitoring">Monitoring</span>
             </div>
           </div>
         </div>
@@ -252,36 +262,36 @@
     <section class="section experience" id="experience">
       <div class="container">
         <h2 class="section__title reveal">
-          <span class="section__number">03.</span> Experience
+          <span class="section__number">03.</span> <span data-i18n="exp_title">Experience</span>
         </h2>
         <div class="timeline">
           <div class="timeline__item reveal">
             <div class="timeline__marker"></div>
             <div class="timeline__content">
               <div class="timeline__header">
-                <h3 class="timeline__title">IT Support Technician & Office Assistant</h3>
-                <span class="timeline__badge">Current</span>
+                <h3 class="timeline__title" data-i18n="exp1_title">IT Support Technician & Office Assistant</h3>
+                <span class="timeline__badge" data-i18n="exp_current">Current</span>
               </div>
-              <p class="timeline__company">Escricontal Accounting</p>
-              <p class="timeline__date">2024 – Present · Brasília, DF</p>
+              <p class="timeline__company" data-i18n="exp1_company">Escricontal Accounting</p>
+              <p class="timeline__date" data-i18n="exp1_date">2024 – Present · Brasília, DF</p>
               <ul class="timeline__list">
-                <li>Provided day-to-day IT support — workstations, printers, network basics, user access — troubleshooting and unblocking non-technical users</li>
-                <li>Supported office routines with document organization and spreadsheets, improving reliability of administrative workflows</li>
-                <li>Strengthened communication, ownership, prioritization, and deadline discipline through close collaboration with a multidisciplinary team</li>
+                <li data-i18n="exp1_li1">Provided day-to-day IT support — workstations, printers, network basics, user access — troubleshooting and unblocking non-technical users</li>
+                <li data-i18n="exp1_li2">Supported office routines with document organization and spreadsheets, improving reliability of administrative workflows</li>
+                <li data-i18n="exp1_li3">Strengthened communication, ownership, prioritization, and deadline discipline through close collaboration with a multidisciplinary team</li>
               </ul>
             </div>
           </div>
           <div class="timeline__item reveal">
             <div class="timeline__marker"></div>
             <div class="timeline__content">
-              <h3 class="timeline__title">Academic Development — Programming Techniques II</h3>
-              <p class="timeline__company">University of Brasília (UnB)</p>
+              <h3 class="timeline__title" data-i18n="exp2_title">Academic Development — Programming Techniques II</h3>
+              <p class="timeline__company" data-i18n="exp2_company">University of Brasília (UnB)</p>
               <p class="timeline__date">2024 · Brasília, DF</p>
               <ul class="timeline__list">
-                <li>Built assignments using HTML, CSS, JavaScript, TypeScript, and Java with focus on readable, maintainable implementations</li>
-                <li>Used ESLint and consistent lint/style rules to prevent common issues and improve long-term code quality</li>
-                <li>Practiced unit testing and TDD fundamentals, following industry-style testing workflows</li>
-                <li>Collaborated in team activities: splitting tasks, integrating contributions via Git, and giving/receiving peer feedback</li>
+                <li data-i18n="exp2_li1">Built assignments using HTML, CSS, JavaScript, TypeScript, and Java with focus on readable, maintainable implementations</li>
+                <li data-i18n="exp2_li2">Used ESLint and consistent lint/style rules to prevent common issues and improve long-term code quality</li>
+                <li data-i18n="exp2_li3">Practiced unit testing and TDD fundamentals, following industry-style testing workflows</li>
+                <li data-i18n="exp2_li4">Collaborated in team activities: splitting tasks, integrating contributions via Git, and giving/receiving peer feedback</li>
               </ul>
             </div>
           </div>
@@ -293,7 +303,7 @@
     <section class="section projects" id="projects">
       <div class="container">
         <h2 class="section__title reveal">
-          <span class="section__number">04.</span> Projects
+          <span class="section__number">04.</span> <span data-i18n="proj_title">Projects</span>
         </h2>
         <div class="projects__grid">
 
@@ -309,8 +319,8 @@
                 </a>
               </div>
             </div>
-            <h3 class="project-card__title">This Portfolio — JGlims.github.io</h3>
-            <p class="project-card__description">
+            <h3 class="project-card__title" data-i18n="proj1_title">This Portfolio — JGlims.github.io</h3>
+            <p class="project-card__description" data-i18n="proj1_desc">
               The site you're looking at right now. Built entirely from scratch with zero frameworks or dependencies — just vanilla HTML, CSS, and JavaScript. Features a custom CSS design-token system using Custom Properties, BEM methodology for scalable styling, IntersectionObserver-driven scroll animations, a canvas-based particle system, perspective tilt effects via mousemove events, a typing animation engine, and full responsive support down to 320px. Deployed on GitHub Pages with automatic CI/CD on push.
             </p>
             <div class="project-card__tags">
@@ -331,8 +341,8 @@
                 </a>
               </div>
             </div>
-            <h3 class="project-card__title">Real-Time Face & Expression Recognition</h3>
-            <p class="project-card__description">
+            <h3 class="project-card__title" data-i18n="proj2_title">Real-Time Face & Expression Recognition</h3>
+            <p class="project-card__description" data-i18n="proj2_desc">
               Real-time face detection, recognition, and expression classification using OpenCV and ML models. Desktop UI for enrollment management, recognition execution, and log inspection.
             </p>
             <div class="project-card__tags">
@@ -351,8 +361,8 @@
                 </a>
               </div>
             </div>
-            <h3 class="project-card__title">Telegram Bots — Reminders & Automation</h3>
-            <p class="project-card__description">
+            <h3 class="project-card__title" data-i18n="proj3_title">Telegram Bots — Reminders & Automation</h3>
+            <p class="project-card__description" data-i18n="proj3_desc">
               Bots automating messages, reminders, and group interactions via the Telegram API. Scheduled notifications with reliability strategies for 24/7 uptime — hosting, monitoring, and recovery patterns.
             </p>
             <div class="project-card__tags">
@@ -371,8 +381,8 @@
                 </a>
               </div>
             </div>
-            <h3 class="project-card__title">Production Minecraft Bedrock Server on Oracle Cloud</h3>
-            <p class="project-card__description">
+            <h3 class="project-card__title" data-i18n="proj4_title">Production Minecraft Bedrock Server on Oracle Cloud</h3>
+            <p class="project-card__description" data-i18n="proj4_desc">
               Deployed and configured a Minecraft Bedrock server running on an Oracle Cloud Infrastructure Always Free VM. Set up the full environment from scratch — VCN networking, security lists, firewall rules, startup automation, scheduled backups, and performance tuning. The server runs 24/7 and handles real player traffic reliably.
             </p>
             <div class="project-card__tags">
@@ -392,14 +402,14 @@
                 </a>
               </div>
             </div>
-            <h3 class="project-card__title">Academic Financial System — Layered Architecture</h3>
-            <p class="project-card__description">
+            <h3 class="project-card__title" data-i18n="proj5_title">Academic Financial System — Layered Architecture</h3>
+            <p class="project-card__description" data-i18n="proj5_desc">
               Layered C++ system with menu/UI, controllers, services, entities, and data layer. Robust validation, exception handling, and clean separation of responsibilities.
             </p>
             <div class="project-card__tags">
               <span class="tag tag--small">C++</span>
               <span class="tag tag--small">OOP</span>
-              <span class="tag tag--small">Architecture</span>
+              <span class="tag tag--small" data-i18n="tag_architecture">Architecture</span>
             </div>
           </article>
 
@@ -411,19 +421,19 @@
     <section class="section education" id="education">
       <div class="container">
         <h2 class="section__title reveal">
-          <span class="section__number">05.</span> Education
+          <span class="section__number">05.</span> <span data-i18n="edu_title">Education</span>
         </h2>
         <div class="education__grid">
           <div class="education__card reveal">
             <div class="education__card-accent"></div>
             <div class="education__card-content">
               <div class="education__card-header">
-                <h3 class="education__degree">B.Sc. in Computer Engineering</h3>
-                <span class="education__date">2024 – Present</span>
+                <h3 class="education__degree" data-i18n="edu1_degree">B.Sc. in Computer Engineering</h3>
+                <span class="education__date" data-i18n="edu1_date">2024 – Present</span>
               </div>
-              <p class="education__school">University of Brasília (UnB) — Darcy Ribeiro Campus</p>
-              <p class="education__coursework-title">Relevant Coursework:</p>
-              <p class="education__coursework">
+              <p class="education__school" data-i18n="edu1_school">University of Brasília (UnB) — Darcy Ribeiro Campus</p>
+              <p class="education__coursework-title" data-i18n="edu_coursework_label">Relevant Coursework:</p>
+              <p class="education__coursework" data-i18n="edu1_coursework">
                 Algorithms & Programming · Data Structures · Programming Techniques I & II · Probability & Statistics · Calculus I–III · Signals and Systems · Intro to AI · Competitive Programming · Physics II · Numerical Calculus
               </p>
             </div>
@@ -432,11 +442,11 @@
             <div class="education__card-accent"></div>
             <div class="education__card-content">
               <div class="education__card-header">
-                <h3 class="education__degree">Advanced English Program</h3>
-                <span class="education__date">Completed 2023</span>
+                <h3 class="education__degree" data-i18n="edu2_degree">Advanced English Program</h3>
+                <span class="education__date" data-i18n="edu2_date">Completed 2023</span>
               </div>
               <p class="education__school">Casa Thomas Jefferson — Brasília, DF</p>
-              <p class="education__coursework">
+              <p class="education__coursework" data-i18n="edu2_desc">
                 Full program completion with strong reading/writing skills for technical and academic contexts.
               </p>
             </div>
@@ -449,15 +459,15 @@
     <section class="section contact" id="contact">
       <div class="container">
         <h2 class="section__title reveal">
-          <span class="section__number">06.</span> Get in Touch
+          <span class="section__number">06.</span> <span data-i18n="contact_title">Get in Touch</span>
         </h2>
         <div class="contact__content reveal">
-          <p class="contact__text">
+          <p class="contact__text" data-i18n="contact_text">
             I'm currently looking for <strong>junior software engineering opportunities</strong> — internships, part-time, or full-time roles. Whether you have a question, a project idea, or just want to say hi, my inbox is always open.
           </p>
           <div class="contact__links">
             <a href="mailto:jg.melo.lima2005@gmail.com" class="btn btn--primary btn--lg">
-              <span class="btn__text">Send an Email</span>
+              <span class="btn__text" data-i18n="contact_btn">Send an Email</span>
               <span class="btn__icon">→</span>
             </a>
           </div>
@@ -483,15 +493,16 @@
   <!-- ========== FOOTER ========== -->
   <footer class="footer">
     <div class="container">
-      <p class="footer__text">
+      <p class="footer__text" data-i18n="footer_text">
         Designed & built by <strong>João Gabriel</strong>
       </p>
-      <p class="footer__subtext">
+      <p class="footer__subtext" data-i18n="footer_subtext">
         Vanilla HTML · CSS · JavaScript — No frameworks, no dependencies.
       </p>
     </div>
   </footer>
 
+  <script src="js/i18n.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

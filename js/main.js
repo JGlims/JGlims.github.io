@@ -1,11 +1,11 @@
 /**
  * main.js — João Gabriel Portfolio
- * 
+ *
  * Modules:
  *   1. Navigation (scroll detection, mobile menu)
- *   2. Typing Animation
+ *   2. Typing Animation (language-aware)
  *   3. Scroll Reveal (IntersectionObserver)
- *   4. Particle Background
+ *   4. Particle Background (Canvas)
  *   5. Tilt Effect (cards)
  *   6. Smooth Scroll
  *   7. Active Section Tracking
@@ -13,15 +13,11 @@
 
 'use strict';
 
-/**
- * Throttle function calls to at most once per `limit` ms.
- * Used for scroll and resize handlers to keep things performant.
- */
 function throttle(fn, limit) {
-  let waiting = false;
-  return function (...args) {
+  var waiting = false;
+  return function () {
     if (!waiting) {
-      fn.apply(this, args);
+      fn.apply(this, arguments);
       waiting = true;
       setTimeout(function () { waiting = false; }, limit);
     }
@@ -70,25 +66,42 @@ function initNavigation() {
 
 
 /* ================================================================
-   2. TYPING ANIMATION
+   2. TYPING ANIMATION (language-aware)
    ================================================================ */
 function initTypingAnimation() {
   var el = document.getElementById('typedText');
   if (!el) return;
 
-  var phrases = [
-    ' · Cloud & Linux Enthusiast',
-    ' · Computer Vision Builder',
-    ' · Clean Architecture Advocate',
-    ' · Python & C++ Developer',
-    ' · Java & JavaScript Developer'
-  ];
+  var phraseSets = {
+    en: [
+      ' \u00B7 Cloud & Linux Enthusiast',
+      ' \u00B7 Computer Vision Builder',
+      ' \u00B7 Clean Architecture Advocate',
+      ' \u00B7 Python & C++ Developer',
+      ' \u00B7 Java & JavaScript Developer'
+    ],
+    pt: [
+      ' \u00B7 Entusiasta de Cloud & Linux',
+      ' \u00B7 Desenvolvedor de Visão Computacional',
+      ' \u00B7 Defensor de Arquitetura Limpa',
+      ' \u00B7 Desenvolvedor Python & C++',
+      ' \u00B7 Desenvolvedor Java & JavaScript'
+    ]
+  };
 
   var phraseIndex = 0;
   var charIndex = 0;
   var deleting = false;
+  var timer = null;
+
+  function getActivePhrases() {
+    var lang = (typeof i18n !== 'undefined') ? i18n.getLang() : 'en';
+    return phraseSets[lang] || phraseSets.en;
+  }
 
   function tick() {
+    var phrases = getActivePhrases();
+    if (phraseIndex >= phrases.length) phraseIndex = 0;
     var current = phrases[phraseIndex];
 
     if (!deleting) {
@@ -97,10 +110,10 @@ function initTypingAnimation() {
 
       if (charIndex === current.length) {
         deleting = true;
-        setTimeout(tick, 2000);
+        timer = setTimeout(tick, 2000);
         return;
       }
-      setTimeout(tick, 60);
+      timer = setTimeout(tick, 60);
     } else {
       charIndex--;
       el.textContent = current.substring(0, charIndex);
@@ -108,19 +121,29 @@ function initTypingAnimation() {
       if (charIndex === 0) {
         deleting = false;
         phraseIndex = (phraseIndex + 1) % phrases.length;
-        setTimeout(tick, 400);
+        timer = setTimeout(tick, 400);
         return;
       }
-      setTimeout(tick, 35);
+      timer = setTimeout(tick, 35);
     }
   }
 
-  setTimeout(tick, 1200);
+  // When language changes, reset the typing animation
+  document.addEventListener('langchange', function () {
+    if (timer) clearTimeout(timer);
+    phraseIndex = 0;
+    charIndex = 0;
+    deleting = false;
+    el.textContent = '';
+    timer = setTimeout(tick, 300);
+  });
+
+  timer = setTimeout(tick, 1200);
 }
 
 
 /* ================================================================
-   3. SCROLL REVEAL (IntersectionObserver)
+   3. SCROLL REVEAL
    ================================================================ */
 function initScrollReveal() {
   var elements = document.querySelectorAll('.reveal');
@@ -151,7 +174,7 @@ function initScrollReveal() {
 
 
 /* ================================================================
-   4. PARTICLE BACKGROUND (Canvas)
+   4. PARTICLE BACKGROUND
    ================================================================ */
 function initParticles() {
   var container = document.querySelector('.hero__particles');
@@ -193,7 +216,6 @@ function initParticles() {
       var p = particles[i];
       p.x += p.vx;
       p.y += p.vy;
-
       if (p.x < 0) p.x = w;
       if (p.x > w) p.x = 0;
       if (p.y < 0) p.y = h;
@@ -209,7 +231,6 @@ function initParticles() {
         var dx = p.x - q.x;
         var dy = p.y - q.y;
         var dist = Math.sqrt(dx * dx + dy * dy);
-
         if (dist < 120) {
           ctx.beginPath();
           ctx.moveTo(p.x, p.y);
@@ -251,12 +272,9 @@ function initTiltEffect() {
         var y = e.clientY - rect.top;
         var cx = rect.width / 2;
         var cy = rect.height / 2;
-
         var rotX = ((y - cy) / cy) * -4;
         var rotY = ((x - cx) / cx) * 4;
-
-        card.style.transform =
-          'perspective(800px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateY(-4px)';
+        card.style.transform = 'perspective(800px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateY(-4px)';
       });
 
       card.addEventListener('mouseleave', function () {
@@ -279,10 +297,8 @@ function initSmoothScroll() {
     anchors[i].addEventListener('click', function (e) {
       var href = this.getAttribute('href');
       if (href === '#') return;
-
       var target = document.querySelector(href);
       if (!target) return;
-
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
@@ -327,6 +343,7 @@ function initActiveSectionTracking() {
    BOOT
    ================================================================ */
 document.addEventListener('DOMContentLoaded', function () {
+  i18n.init();
   initNavigation();
   initTypingAnimation();
   initScrollReveal();

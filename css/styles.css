@@ -15,9 +15,13 @@
    11. Education
    12. Contact
    13. Footer
-   14. Animations & Keyframes
-   15. Scroll Reveal
-   16. Responsive
+   14. Language Toggle
+   15. Buttons
+   16. Tags
+   17. Animations & Keyframes
+   18. Scroll Reveal
+   19. Responsive
+   20. Reduced Motion
    ================================================================ */
 
 /* ================================================================
@@ -295,6 +299,12 @@ code {
   transform: translateY(-7px) rotate(-45deg);
 }
 
+.nav__right-mobile {
+  display: none;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
 
 /* ================================================================
    MOBILE MENU
@@ -455,7 +465,7 @@ code {
 
 
 /* ================================================================
-   BUTTONS
+   15. BUTTONS
    ================================================================ */
 .btn {
   display: inline-flex;
@@ -718,6 +728,10 @@ code {
   gap: var(--space-sm);
 }
 
+
+/* ================================================================
+   16. TAGS
+   ================================================================ */
 .tag {
   display: inline-block;
   padding: 0.25rem 0.75rem;
@@ -1132,7 +1146,48 @@ code {
 
 
 /* ================================================================
-   14. ANIMATIONS & KEYFRAMES
+   14. LANGUAGE TOGGLE
+   ================================================================ */
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  transition: border-color var(--duration-fast) var(--ease-out),
+              background var(--duration-fast) var(--ease-out),
+              color var(--duration-fast) var(--ease-out),
+              transform var(--duration-fast) var(--ease-spring);
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.lang-toggle:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-dim);
+  color: var(--color-accent-light);
+  transform: translateY(-1px);
+}
+
+.lang-toggle__flag {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.lang-toggle__label {
+  font-weight: 600;
+}
+
+
+/* ================================================================
+   17. ANIMATIONS & KEYFRAMES
    ================================================================ */
 @keyframes blink {
   0%, 100% { opacity: 1; }
@@ -1159,7 +1214,7 @@ code {
 
 
 /* ================================================================
-   15. SCROLL REVEAL
+   18. SCROLL REVEAL
    ================================================================ */
 .reveal {
   opacity: 0;
@@ -1180,7 +1235,7 @@ code {
 
 
 /* ================================================================
-   16. RESPONSIVE
+   19. RESPONSIVE
    ================================================================ */
 @media (max-width: 1024px) {
   .skills__grid {
@@ -1197,7 +1252,7 @@ code {
     display: none;
   }
 
-  .nav__toggle {
+  .nav__right-mobile {
     display: flex;
   }
 
@@ -1272,7 +1327,7 @@ code {
 
 
 /* ================================================================
-   REDUCED MOTION
+   20. REDUCED MOTION
    ================================================================ */
 @media (prefers-reduced-motion: reduce) {
   *,
