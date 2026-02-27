@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="João Gabriel Melo de Lima — Computer Engineering student at UnB. Software engineer portfolio showcasing projects in Python, C++, TypeScript, and cloud infrastructure." />
+  <meta name="author" content="João Gabriel Melo de Lima" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="João Gabriel — Software Engineer" />
+  <meta property="og:description" content="Computer Engineering @ UnB · Python · C++ · TypeScript · Cloud" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://JGlims.github.io" />
+
+  <title>João Gabriel — Software Engineer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- ========== NAVIGATION ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav__logo">
+      <a href="#hero" class="nav__logo-link">&lt;JGlims /&gt;</a>
+    </div>
+    <ul class="nav__links">
+      <li><a href="#about" class="nav__link">About</a></li>
+      <li><a href="#skills" class="nav__link">Skills</a></li>
+      <li><a href="#experience" class="nav__link">Experience</a></li>
+      <li><a href="#projects" class="nav__link">Projects</a></li>
+      <li><a href="#education" class="nav__link">Education</a></li>
+      <li><a href="#contact" class="nav__link">Contact</a></li>
+    </ul>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation menu">
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+      <span class="nav__toggle-bar"></span>
+    </button>
+  </nav>
+
+  <!-- ========== MOBILE MENU ========== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-menu__links">
+      <li><a href="#about" class="mobile-menu__link">About</a></li>
+      <li><a href="#skills" class="mobile-menu__link">Skills</a></li>
+      <li><a href="#experience" class="mobile-menu__link">Experience</a></li>
+      <li><a href="#projects" class="mobile-menu__link">Projects</a></li>
+      <li><a href="#education" class="mobile-menu__link">Education</a></li>
+      <li><a href="#contact" class="mobile-menu__link">Contact</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero">
+      <div class="hero__particles" aria-hidden="true"></div>
+      <div class="hero__content">
+        <p class="hero__greeting reveal">Hi, I'm</p>
+        <h1 class="hero__name reveal reveal--delay-1">João Gabriel<span class="hero__cursor">_</span></h1>
+        <p class="hero__title reveal reveal--delay-2">
+          <span class="hero__title-static">Software Engineer</span>
+          <span class="hero__title-dynamic" id="typedText"></span>
+        </p>
+        <p class="hero__subtitle reveal reveal--delay-3">
+          Computer Engineering @ UnB · Building reliable systems with Python, C++, and TypeScript
+        </p>
+        <div class="hero__cta reveal reveal--delay-4">
+          <a href="#projects" class="btn btn--primary">
+            <span class="btn__text">View My Work</span>
+            <span class="btn__icon">→</span>
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <span class="btn__text">Get in Touch</span>
+          </a>
+        </div>
+        <div class="hero__social reveal reveal--delay-4">
+          <a href="https://github.com/JGlims" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </a>
+          <a href="https://linkedin.com/in/joao-gabriel-55196837b" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="mailto:jg.melo.lima2005@gmail.com" class="hero__social-link" aria-label="Email">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator reveal reveal--delay-4">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section about" id="about">
+      <div class="container">
+        <h2 class="section__title reveal">
+          <span class="section__number">01.</span> About Me
+        </h2>
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p>
+              I'm João — a 4th-semester <strong>Computer Engineering</strong> student at UnB who genuinely gets excited about making things work. Not just "it compiles" work, but <strong>runs-in-production-at-3am-without-waking-anyone-up</strong> work. That's the standard I hold myself to.
+            </p>
+            <p>
+              My path into engineering started the way most do: breaking things and figuring out how to put them back together. These days I spend my time building <strong>real-time computer vision pipelines</strong>, writing automation bots that handle thousands of messages, and running game servers where actual players depend on my infrastructure decisions. I write mostly <strong>Python</strong>, <strong>C++</strong>, and <strong>TypeScript</strong>, but the language matters less to me than the architecture behind it.
+            </p>
+            <p>
+              What I'm chasing next: distributed systems, large-scale data pipelines, and anything that forces me to think about performance at a level most people skip. I'm the kind of person who reads Linux kernel docs for fun and thinks <code>htop</code> is a perfectly valid form of entertainment.
+            </p>
+          </div>
+          <div class="about__photo-section reveal">
+            <div class="about__photo-wrapper">
+              <img
+                src="assets/joao-profile.webp"
+                alt="João Gabriel — Computer Engineering student at UnB"
+                class="about__photo"
+                width="320"
+                height="320"
+                loading="lazy"
+              />
+              <div class="about__photo-border"></div>
+            </div>
+            <div class="about__details">
+              <div class="about__detail-card">
+                <span class="about__detail-icon">📍</span>
+                <div>
+                  <span class="about__detail-label">Location</span>
+                  <span class="about__detail-value">Brasília, DF, Brazil</span>
+                </div>
+              </div>
+              <div class="about__detail-card">
+                <span class="about__detail-icon">🎓</span>
+                <div>
+                  <span class="about__detail-label">University</span>
+                  <span class="about__detail-value">UnB — Computer Engineering</span>
+                </div>
+              </div>
+              <div class="about__detail-card">
+                <span class="about__detail-icon">🗣️</span>
+                <div>
+                  <span class="about__detail-label">Languages</span>
+                  <span class="about__detail-value">Portuguese (native) · English (fluent)</span>
+                </div>
+              </div>
+              <div class="about__detail-card">
+                <span class="about__detail-icon">⚡</span>
+                <div>
+                  <span class="about__detail-label">Interests</span>
+                  <span class="about__detail-value">Big Data · Distributed Systems · Cloud</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SKILLS ========== -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <h2 class="section__title reveal">
+          <span class="section__number">02.</span> Skills & Tools
+        </h2>
+        <div class="skills__grid">
+          <div class="skill-card reveal" data-tilt>
+            <div class="skill-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="skill-card__title">Languages</h3>
+            <div class="skill-card__tags">
+              <span class="tag">Python</span>
+              <span class="tag">C++</span>
+              <span class="tag">C</span>
+              <span class="tag">Java</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </div>
+          <div class="skill-card reveal" data-tilt>
+            <div class="skill-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="skill-card__title">Frontend</h3>
+            <div class="skill-card__tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">REST APIs</span>
+            </div>
+          </div>
+          <div class="skill-card reveal" data-tilt>
+            <div class="skill-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+            </div>
+            <h3 class="skill-card__title">Data & Backend</h3>
+            <div class="skill-card__tags">
+              <span class="tag">SQL</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">OpenCV</span>
+            </div>
+          </div>
+          <div class="skill-card reveal" data-tilt>
+            <div class="skill-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+            </div>
+            <h3 class="skill-card__title">DevOps & Tools</h3>
+            <div class="skill-card__tags">
+              <span class="tag">Git/GitHub</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Docker</span>
+              <span class="tag">VS Code</span>
+              <span class="tag">WSL</span>
+            </div>
+          </div>
+          <div class="skill-card reveal" data-tilt>
+            <div class="skill-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="skill-card__title">Practices</h3>
+            <div class="skill-card__tags">
+              <span class="tag">Clean Code</span>
+              <span class="tag">TDD</span>
+              <span class="tag">ESLint</span>
+              <span class="tag">Modular Design</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+          <div class="skill-card reveal" data-tilt>
+            <div class="skill-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <h3 class="skill-card__title">Cloud & Infra</h3>
+            <div class="skill-card__tags">
+              <span class="tag">Oracle Cloud</span>
+              <span class="tag">VPS Deployment</span>
+              <span class="tag">Nginx</span>
+              <span class="tag">Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <h2 class="section__title reveal">
+          <span class="section__number">03.</span> Experience
+        </h2>
+        <div class="timeline">
+          <div class="timeline__item reveal">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <div class="timeline__header">
+                <h3 class="timeline__title">IT Support Technician & Office Assistant</h3>
+                <span class="timeline__badge">Current</span>
+              </div>
+              <p class="timeline__company">Escricontal Accounting</p>
+              <p class="timeline__date">2024 – Present · Brasília, DF</p>
+              <ul class="timeline__list">
+                <li>Provided day-to-day IT support — workstations, printers, network basics, user access — troubleshooting and unblocking non-technical users</li>
+                <li>Supported office routines with document organization and spreadsheets, improving reliability of administrative workflows</li>
+                <li>Strengthened communication, ownership, prioritization, and deadline discipline through close collaboration with a multidisciplinary team</li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline__item reveal">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <h3 class="timeline__title">Academic Development — Programming Techniques II</h3>
+              <p class="timeline__company">University of Brasília (UnB)</p>
+              <p class="timeline__date">2024 · Brasília, DF</p>
+              <ul class="timeline__list">
+                <li>Built assignments using HTML, CSS, JavaScript, TypeScript, and Java with focus on readable, maintainable implementations</li>
+                <li>Used ESLint and consistent lint/style rules to prevent common issues and improve long-term code quality</li>
+                <li>Practiced unit testing and TDD fundamentals, following industry-style testing workflows</li>
+                <li>Collaborated in team activities: splitting tasks, integrating contributions via Git, and giving/receiving peer feedback</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROJECTS ========== -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <h2 class="section__title reveal">
+          <span class="section__number">04.</span> Projects
+        </h2>
+        <div class="projects__grid">
+
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__header">
+              <svg class="project-card__folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <div class="project-card__links">
+                <a href="https://JGlims.github.io" target="_blank" rel="noopener noreferrer" aria-label="Live site">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+                <a href="https://github.com/JGlims/JGlims.github.io" target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card__title">This Portfolio — JGlims.github.io</h3>
+            <p class="project-card__description">
+              The site you're looking at right now. Built entirely from scratch with zero frameworks or dependencies — just vanilla HTML, CSS, and JavaScript. Features a custom CSS design-token system using Custom Properties, BEM methodology for scalable styling, IntersectionObserver-driven scroll animations, a canvas-based particle system, perspective tilt effects via mousemove events, a typing animation engine, and full responsive support down to 320px. Deployed on GitHub Pages with automatic CI/CD on push.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--small">HTML</span>
+              <span class="tag tag--small">CSS</span>
+              <span class="tag tag--small">JavaScript</span>
+              <span class="tag tag--small">Canvas API</span>
+              <span class="tag tag--small">GitHub Pages</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__header">
+              <svg class="project-card__folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <div class="project-card__links">
+                <a href="https://github.com/JGlims" target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card__title">Real-Time Face & Expression Recognition</h3>
+            <p class="project-card__description">
+              Real-time face detection, recognition, and expression classification using OpenCV and ML models. Desktop UI for enrollment management, recognition execution, and log inspection.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--small">Python</span>
+              <span class="tag tag--small">OpenCV</span>
+              <span class="tag tag--small">ML</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__header">
+              <svg class="project-card__folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <div class="project-card__links">
+                <a href="https://github.com/JGlims" target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card__title">Telegram Bots — Reminders & Automation</h3>
+            <p class="project-card__description">
+              Bots automating messages, reminders, and group interactions via the Telegram API. Scheduled notifications with reliability strategies for 24/7 uptime — hosting, monitoring, and recovery patterns.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--small">Python</span>
+              <span class="tag tag--small">Telegram API</span>
+              <span class="tag tag--small">Deploy</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__header">
+              <svg class="project-card__folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <div class="project-card__links">
+                <a href="https://github.com/JGlims" target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card__title">Production Minecraft Bedrock Server on Oracle Cloud</h3>
+            <p class="project-card__description">
+              Deployed and configured a Minecraft Bedrock server running on an Oracle Cloud Infrastructure Always Free VM. Set up the full environment from scratch — VCN networking, security lists, firewall rules, startup automation, scheduled backups, and performance tuning. The server runs 24/7 and handles real player traffic reliably.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--small">Oracle Cloud</span>
+              <span class="tag tag--small">Linux</span>
+              <span class="tag tag--small">Networking</span>
+              <span class="tag tag--small">DevOps</span>
+            </div>
+          </article>
+
+          <article class="project-card reveal" data-tilt>
+            <div class="project-card__header">
+              <svg class="project-card__folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              <div class="project-card__links">
+                <a href="https://github.com/JGlims" target="_blank" rel="noopener noreferrer" aria-label="GitHub repo">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3 class="project-card__title">Academic Financial System — Layered Architecture</h3>
+            <p class="project-card__description">
+              Layered C++ system with menu/UI, controllers, services, entities, and data layer. Robust validation, exception handling, and clean separation of responsibilities.
+            </p>
+            <div class="project-card__tags">
+              <span class="tag tag--small">C++</span>
+              <span class="tag tag--small">OOP</span>
+              <span class="tag tag--small">Architecture</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== EDUCATION ========== -->
+    <section class="section education" id="education">
+      <div class="container">
+        <h2 class="section__title reveal">
+          <span class="section__number">05.</span> Education
+        </h2>
+        <div class="education__grid">
+          <div class="education__card reveal">
+            <div class="education__card-accent"></div>
+            <div class="education__card-content">
+              <div class="education__card-header">
+                <h3 class="education__degree">B.Sc. in Computer Engineering</h3>
+                <span class="education__date">2024 – Present</span>
+              </div>
+              <p class="education__school">University of Brasília (UnB) — Darcy Ribeiro Campus</p>
+              <p class="education__coursework-title">Relevant Coursework:</p>
+              <p class="education__coursework">
+                Algorithms & Programming · Data Structures · Programming Techniques I & II · Probability & Statistics · Calculus I–III · Signals and Systems · Intro to AI · Competitive Programming · Physics II · Numerical Calculus
+              </p>
+            </div>
+          </div>
+          <div class="education__card reveal">
+            <div class="education__card-accent"></div>
+            <div class="education__card-content">
+              <div class="education__card-header">
+                <h3 class="education__degree">Advanced English Program</h3>
+                <span class="education__date">Completed 2023</span>
+              </div>
+              <p class="education__school">Casa Thomas Jefferson — Brasília, DF</p>
+              <p class="education__coursework">
+                Full program completion with strong reading/writing skills for technical and academic contexts.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <h2 class="section__title reveal">
+          <span class="section__number">06.</span> Get in Touch
+        </h2>
+        <div class="contact__content reveal">
+          <p class="contact__text">
+            I'm currently looking for <strong>junior software engineering opportunities</strong> — internships, part-time, or full-time roles. Whether you have a question, a project idea, or just want to say hi, my inbox is always open.
+          </p>
+          <div class="contact__links">
+            <a href="mailto:jg.melo.lima2005@gmail.com" class="btn btn--primary btn--lg">
+              <span class="btn__text">Send an Email</span>
+              <span class="btn__icon">→</span>
+            </a>
+          </div>
+          <div class="contact__alternatives">
+            <a href="https://linkedin.com/in/joao-gabriel-55196837b" target="_blank" rel="noopener noreferrer" class="contact__alt-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <span>LinkedIn</span>
+            </a>
+            <a href="https://github.com/JGlims" target="_blank" rel="noopener noreferrer" class="contact__alt-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              <span>GitHub</span>
+            </a>
+            <a href="tel:+5561998812212" class="contact__alt-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>+55 (61) 99881-2212</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">
+        Designed & built by <strong>João Gabriel</strong>
+      </p>
+      <p class="footer__subtext">
+        Vanilla HTML · CSS · JavaScript — No frameworks, no dependencies.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
