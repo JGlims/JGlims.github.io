@@ -372,7 +372,7 @@
             </div>
           </article>
 
-          <!-- ===== MINECRAFT PROJECT CARD (UPDATED) ===== -->
+          <!-- ===== MINECRAFT PROJECT CARD (UPDATED FOR CROSS-PLAY) ===== -->
           <article class="project-card reveal" data-tilt>
             <div class="project-card__header">
               <svg class="project-card__folder" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
@@ -385,19 +385,21 @@
                 </a>
               </div>
             </div>
-            <h3 class="project-card__title" data-i18n="proj4_title">Production Minecraft Bedrock Server on Oracle Cloud</h3>
+            <h3 class="project-card__title" data-i18n="proj4_title">Cross-Play Minecraft Server on Oracle Cloud</h3>
             <p class="project-card__description" data-i18n="proj4_desc">
-              Deployed and configured a Minecraft Bedrock server on an Oracle Cloud Infrastructure Always Free ARM VM. Set up the full environment from scratch — VCN networking, security lists, iptables firewall rules, startup automation via systemd, scheduled backups, and performance tuning. Built a custom real-time monitoring dashboard: a Python service pings the server every 60 seconds via raw UDP, collects CPU, RAM, disk, and player metrics, and writes rolling JSON consumed by a vanilla JavaScript front end served through Nginx. The server and dashboard run 24/7 and handle real player traffic reliably. <a href="http://144.22.198.184" target="_blank" rel="noopener noreferrer">View Live Dashboard →</a>
+              Deployed a production Java + Bedrock cross-play Minecraft server on an Oracle Cloud Infrastructure Always Free ARM VM using Docker. Runs PaperMC with GeyserMC and Floodgate plugins, enabling seamless play between Java Edition (PC, TLauncher) and Bedrock Edition (mobile, console, Windows 10) players on the same world. Configured offline-mode authentication, iptables firewall rules, OCI security lists, Docker restart policies, and container health monitoring. Built a custom real-time monitoring dashboard: a Python service polls the server every 60 seconds via mcstatus, collects CPU, RAM, disk, and player metrics, and writes rolling JSON consumed by a vanilla JavaScript front end served through Nginx. The server and dashboard run 24/7 with real player traffic. <a href="http://144.22.198.184" target="_blank" rel="noopener noreferrer">View Live Dashboard →</a>
             </p>
             <div class="project-card__tags">
+              <span class="tag tag--small">Docker</span>
+              <span class="tag tag--small">PaperMC</span>
+              <span class="tag tag--small">GeyserMC</span>
               <span class="tag tag--small">Python</span>
               <span class="tag tag--small">Bash</span>
               <span class="tag tag--small">Nginx</span>
               <span class="tag tag--small">JavaScript</span>
               <span class="tag tag--small">Oracle Cloud</span>
               <span class="tag tag--small">Linux</span>
-              <span class="tag tag--small">systemd</span>
-              <span class="tag tag--small">UDP Protocol</span>
+              <span class="tag tag--small">ARM</span>
             </div>
           </article>
 
